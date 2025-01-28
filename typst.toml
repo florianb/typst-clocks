@@ -1,0 +1,11 @@
+[package]
+name = "clocks"
+version = "1.0.0"
+entrypoint = "clocks.typ"
+authors = ["Florian Neumann <fn-oss@posteo.de>"]
+license = "MIT"
+description = "Package to draw a 12-hour clock face for the specified hour or hour and minute combination."
+repository = "https://github.com/florianb/typst-clocks"
+keywords = ["clock", "education"]
+categories = ["components", "visualization"]
+exclude = ["example.*"]

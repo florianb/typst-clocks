@@ -17,8 +17,7 @@
 }
 
 // Draws a clock with the given diameter.
-
-#let clock(diameter, hour: -1, minute: -1, stroke: none) = {
+#let clock(diameter: 3em, hours: none, minutes: none, stroke: none) = {
   let radius = diameter / 2
   let inner_radius = radius * 0.9
   let indices = array.range(0, 360, step: 30).map(v => v * 1deg)
@@ -42,12 +41,12 @@
       })
     }
   
-    if hour >= 0 and hour <= 12 {
-      let degree = 30deg * hour - 90deg
+    if hours != none and hours >= 0 and hours <= 12 {
+      let degree = 30deg * hours - 90deg
       let length = diameter * 30%
   
-      if minute >= 0 and minute <= 60 {
-        degree += 0.5deg * minute 
+      if minutes != none and minutes>= 0 and minutes<= 60 {
+        degree += 0.5deg * minutes
       }
   
       place(dy: -radius, dx: radius, {
@@ -55,8 +54,8 @@
       })
     }
   
-    if minute >= 0 and minute <= 60 {
-      let degree = 6deg * minute - 90deg
+    if minutes != none and minutes>= 0 and minutes<= 60 {
+      let degree = 6deg * minutes - 90deg
       let length = diameter * 40%
       
       place(dy: -radius, dx: radius, {
