@@ -16,7 +16,12 @@
   (radius * sin, radius * cos)
 }
 
-// Draws a clock with the given diameter.
+// Draws a clock within a box element.
+//
+// diameter: length: defaults to 3em
+// hours: none or number from 1 to 12
+// minutes: none or number frome 1 to 60
+// stroke: none or stroke object
 #let clock(diameter: 3em, hours: none, minutes: none, stroke: none) = {
   let radius = diameter / 2
   let inner_radius = radius * 0.9
